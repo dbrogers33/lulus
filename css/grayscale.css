@@ -376,4 +376,54 @@ body {
 }
 .fa-bars {
     background-color: white;
-}
+}
+
+/* Stressless microsite: one screen tall so the shop's own header, menus and
+   pop-ups stay visible; the shop scrolls inside the frame. */
+.stressless-frame {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.stressless-frame iframe {
+    display: block;
+    width: 100%;
+    height: 80vh;
+    height: calc(100vh - 70px);
+    height: calc(100svh - 70px);
+    min-height: 480px;
+    border: 0;
+}
+
+.stressless-open {
+    margin-top: 20px;
+}
+
+@media(max-width:767px) {
+    .stressless-frame {
+        margin-left: -15px;
+        margin-right: -15px;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .stressless-frame iframe {
+        height: calc(100vh - 52px);
+        height: calc(100svh - 52px);
+    }
+
+    .stressless-open {
+        white-space: normal;
+        font-size: 14px;
+    }
+}
+
+/* Keep the five-item menu on one row on tablets */
+@media(min-width:768px) and (max-width:991px) {
+    .navbar-custom .nav li a {
+        padding-left: 9px;
+        padding-right: 9px;
+        font-size: 13px;
+    }
+}
